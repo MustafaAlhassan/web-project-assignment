@@ -1,36 +1,17 @@
 {
-    "redirects": [
-      {
-        "source": "/:path.html",
-        "destination": "/:path",
-        "permanent": true
-      }
-    ],
-    "routes": [
-      {
-        "src": "/cars",
-        "dest": "/cars.html",
-        "headers": { "Cache-Control": "no-cache" }
-      },
-      {
-        "src": "/manage",
-        "dest": "/manage.html",
-        "headers": { "Cache-Control": "no-cache" }
-      },
-      {
-        "src": "/settings",
-        "dest": "/settings.html",
-        "headers": { "Cache-Control": "no-cache" }
-      },
-      {
-        "src": "/sold",
-        "dest": "/sold.html",
-        "headers": { "Cache-Control": "no-cache" }
-      },
-      {
-        "src": "/",
-        "dest": "/index.html",
-        "headers": { "Cache-Control": "no-cache" }
-      }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/:path.html",
+      "destination": "/:path",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(cars|login_page|manage|settings|sold|index)",
+      "destination": "/$1.html"
+    }
+  ],
+  "cleanUrls": true, 
+  "trailingSlash": false 
+}
